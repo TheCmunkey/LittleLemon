@@ -14,5 +14,12 @@ class MenuAdmin(admin.ModelAdmin):
     list_display  = ('id', 'title', 'price', 'inventory')
     ordering      = ['title', 'price']
     search_fields = ['title']
+    
+@admin.register(MenuItem)   
+class MenuItemAdmin(admin.ModelAdmin):
+    
+      list_display  = ('id', 'title', 'price', 'inventory')
+      ordering      = ['title', 'price']
+      search_fields = ['title']    
 
  
