@@ -12,5 +12,18 @@ The second person posted a link to a blank github repo.
 
 And the other 2 posted links to thin air!
 
-I completed most of what was requested.
+I think I completed most of what was requested:
+
+restaurant/
+restaurant/home
+restaurant/booking
+
+api-token-auth/message/ 
+api/menu-items/  
+api/menu-items/{pk}
+api/booking/
+api/booking/{pk}
+api/api-token-auth/
+
+   
 
