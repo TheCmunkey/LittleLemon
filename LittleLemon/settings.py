@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
     'Restaurant',
+    'LittleLemonAPI', 
 ]
 
 MIDDLEWARE = [
@@ -130,3 +133,31 @@ STATIC_URL = 'Restaurant/static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+REST_FRAMEWORK = {
+ 
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',  #To use djoser with  browsable API view
+    ),
+    
+    'DEFAULT_PERMISSION_CLASSES': (
+          'rest_framework.permissions.IsAuthenticated',
+    #     'rest_framework.permissions.IsAuthenticatedOrReadOnly",
+    #     'rest_framework.permissions.IsAdminUser',
+    ),
+ 
+ 
+      
+}	 
+
+# DJOSER CODE BELOW MUST BE BELOW THE REST_FRAMEWORK  
+
+DJOSER = {
+ 
+    "USER_ID_FIELD": "username",   #<--- SPECIFIES WHICH USER WILL BE THE PRIMARY KEY (ID)
+    #"LOGIN_FIELD"  : "email",     #<--- Sometimes, people prefer to use the email address as the username
+    #'ACTIVATION_URL': '#/activate/{uid}/{token}',
+    #'SEND_ACTIVATION_EMAIL': True,
+}
